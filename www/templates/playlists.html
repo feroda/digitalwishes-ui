@@ -1,9 +1,20 @@
-<ion-view view-title="Playlists">
+<ion-view view-title="WishesCategories">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-        {{playlist.title}}
+    <ion-card ng-repeat="kind in kinds">
+      <ion-item class="item-body">
+          <ion-item class="item-divider">{{kind.title}}</ion-item>
+          <ion-item>
+          <img src="{{kind.img}}" />immagine... (carousel...?)
+          </ion-item>
+          <!--
+          <ion-item class="item-avatar">
+              <img src="{{}}">
+                  <h2>Marty McFly</h2>
+                      <p>November 05, 1955</p>
+                        </ion-item>
+          -->
+          <ion-item href="#/app/{{kind.slug}}/">Vedi tutti</ion-item>
       </ion-item>
-    </ion-list>
+    </ion-card>
   </ion-content>
 </ion-view>
