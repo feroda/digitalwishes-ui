@@ -42,9 +42,10 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope) {
+
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams, $rootScope) {
+.controller('PlaylistCtrl', function($scope, $stateParams, $rootScope, $sce) {
 
     $scope.title = null;
     angular.forEach($rootScope.kinds, function (kind) {
@@ -52,4 +53,15 @@ angular.module('starter.controllers', [])
             $scope.title = kind.title;
         }
     });
+
+    $scope.get_html_preview = function (wish) {
+        if (wish.url.indexOf('youtube') !== -1) {
+            var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
+            var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=0";
+            var embedhtml = '<iframe width="420" height="315" src="';
+            embedhtml += embed_url + '"> </iframe>';
+            // trust the html content here
+            return $sce.trustAsHtml(embedhtml);
+        }
+    };
 });

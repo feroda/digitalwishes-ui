@@ -1,5 +1,21 @@
 <ion-view view-title="{{title}}">
   <ion-content>
-    <h1>Playlist</h1>
+    <ion-card ng-repeat="wish in wishes">
+        <ion-item class="item-body"> <!-- ci vuole una xhr href="#/app/wishes/{{wish.id}}"> -->
+          <ion-item class="item-divider">{{wish.title}}</ion-item>
+          <ion-row>
+              <ion-col ng-bind-html="get_html_preview(wish)"></ion-col>
+              <!-- OLD <ion-col class="col-top">{{wish.description}}</ion-col> -->
+              <ion-col class="col-top">{{wish.dedication}}</ion-col>
+          </ion-row>
+          <ion-item class="item-avatar">
+              <img ng-src="{{wish.author_logo}}">
+              <h2>{{ wish.author }}</h2>
+              <!-- TODO <img ng-src="{{wish.author_avatar}}"> -->
+              <!-- TODO <h2>{{ wish.author_name }}</h2> -->
+              <p>{{ wish.approved_on }}</p>
+          </ion-item>
+      </ion-item>
+    </ion-card>
   </ion-content>
 </ion-view>
