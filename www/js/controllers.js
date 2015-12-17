@@ -56,13 +56,17 @@ angular.module('starter.controllers', [])
     });
 
     $scope.get_html_preview = function (wish) {
+
+        var embedhtml;
         if (wish.url.indexOf('youtube') !== -1) {
             var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
             var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=0";
-            var embedhtml = '<iframe width="420" height="315" src="';
+            embedhtml = '<iframe width="420" height="315" src="';
             embedhtml += embed_url + '"> </iframe>';
             // trust the html content here
-            return $sce.trustAsHtml(embedhtml);
+        } else if (wish.kind == "wishes_fabriano") {
+            embedhtml = '<img src="' + wish.url + '" width="420" height="315" />';
         }
+        return $sce.trustAsHtml(embedhtml);
     };
 });

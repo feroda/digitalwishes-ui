@@ -38,5 +38,15 @@
     "author_logo":null,
     "tag_place":"Fabriano",
     "tag_subject":"felici, ridere, musica",
+    "kind": "wishes_other"
+},{
+    "id":5,
+    "title":"Tanti auguri dal palazzo del podesta'",
+    "url":"/test_data/foto1.jpg",
+    "description":"",
+    "author":"",
+    "author_logo":null,
+    "tag_place":"Fabriano",
+    "tag_subject":"",
     "kind": "wishes_fabriano"
 }]
