@@ -42,11 +42,14 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope) {
-  $scope.kinds = [
-    { title: 'Auguri da Fabriano', id: 1, slug: 'wishes-fabriano' },
-    { title: 'Auguri per tutti', id: 2, slug: 'wishes' }
-  ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('PlaylistCtrl', function($scope, $stateParams, $rootScope) {
+
+    $scope.title = null;
+    angular.forEach($rootScope.kinds, function (kind) {
+        if (kind.slug == $stateParams.playlistId) {
+            $scope.title = kind.title;
+        }
+    });
 });

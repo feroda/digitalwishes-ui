@@ -1,7 +1,7 @@
-<ion-view view-title="Tutti gli auguri!">
+<ion-view view-title="Tanti auguri!">
   <ion-content>
     <ion-card ng-repeat="kind in kinds">
-      <ion-item class="item-body">
+        <ion-item class="item-body" href="#/app/playlists/{{kind.slug}}">
           <ion-item class="item-divider">{{kind.title}}</ion-item>
           <ion-item>
           <img src="{{kind.img}}" />immagine... (carousel...?)
@@ -13,7 +13,6 @@
                       <p>November 05, 1955</p>
                         </ion-item>
           -->
-          <ion-item href="#/app/{{kind.slug}}/">Vedi tutti</ion-item>
       </ion-item>
     </ion-card>
   </ion-content>

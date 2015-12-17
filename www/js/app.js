@@ -71,4 +71,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
+})
+.run(function($rootScope) {
+  $rootScope.kinds = [
+    {
+        title: 'Auguri da Fabriano',
+        id: 1,
+        slug: 'wishes-fabriano'
+    }, {
+        title: 'Auguri per tutti',
+        id: 2,
+        slug: 'wishes'
+    }
+  ];
 });
