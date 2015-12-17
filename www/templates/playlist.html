@@ -1,6 +1,6 @@
 <ion-view view-title="{{title}}">
   <ion-content>
-    <ion-card ng-repeat="wish in wishes">
+      <ion-card ng-repeat="wish in wishes | filter:{ kind: playlistId }">
         <ion-item class="item-body"> <!-- ci vuole una xhr href="#/app/wishes/{{wish.id}}"> -->
           <ion-item class="item-divider">{{wish.title}}</ion-item>
           <ion-row>

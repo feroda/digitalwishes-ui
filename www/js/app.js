@@ -77,11 +77,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize'])
     {
         title: 'Auguri da Fabriano',
         id: 1,
-        slug: 'wishes-fabriano'
+        slug: 'wishes_fabriano'
     }, {
         title: 'Auguri per tutti',
         id: 2,
-        slug: 'wishes'
+        slug: 'wishes_other'
     }
   ];
     $http.get('/test_data/digitalxmas_api_v1_wishes_.json')

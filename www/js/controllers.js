@@ -48,6 +48,7 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams, $rootScope, $sce) {
 
     $scope.title = null;
+    $scope.playlistId = $stateParams.playlistId;
     angular.forEach($rootScope.kinds, function (kind) {
         if (kind.slug == $stateParams.playlistId) {
             $scope.title = kind.title;
