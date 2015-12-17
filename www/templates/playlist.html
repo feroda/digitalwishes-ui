@@ -3,11 +3,9 @@
       <ion-card ng-repeat="wish in wishes | filter:{ kind: playlistId }">
         <ion-item class="item-body"> <!-- ci vuole una xhr href="#/app/wishes/{{wish.id}}"> -->
           <ion-item class="item-divider">{{wish.title}}</ion-item>
-          <ion-row>
-              <ion-col ng-bind-html="get_html_preview(wish)"></ion-col>
-              <!-- OLD <ion-col class="col-top">{{wish.description}}</ion-col> -->
-              <ion-col class="col-top">{{wish.dedication}}</ion-col>
-          </ion-row>
+          <ion-item ng-bind-html="get_html_preview(wish)"></ion-item>
+          <!-- OLD <ion-col class="col-top">{{wish.description}}</ion-col> -->
+          <ion-item class="col-top">{{wish.dedication}}</ion-item>
           <ion-item class="item-avatar">
               <img ng-src="{{wish.author_logo}}">
               <h2>{{ wish.author }}</h2>

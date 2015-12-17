@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
   //});
 
   // Form data for the login modal
-  $scope.loginData = {};
+  $scope.new_wish = {};
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -28,11 +28,22 @@ angular.module('starter.controllers', [])
   $scope.login = function() {
     $scope.modal.show();
   };
+  $scope.fab_photos = ['/test_data/photo_fab/1.jpg', '/test_data/photo_fab/2.jpg'];
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+  $scope.doAddFabrianoWish = function() {
+    console.log('Adding wish...', $scope.new_wish);
 
+    $http.post('/api/v1/wishes/', $scope.new_wish)
+        .then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            alert("il tuo augurio e' stato aggiunto!");
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            alert("il tuo augurio non e' stato aggiunto, ma siamo ancora in test vai tranquillo!");
+        });
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
     $timeout(function() {
