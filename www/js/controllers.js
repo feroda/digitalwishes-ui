@@ -68,7 +68,19 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('PlaylistsCtrl', function($scope, $rootScope) {
+
+    //angular.forEach($rootScope.kinds, function (kind) {
+    //    $('.media-list-{{kind.slug}}').slick({
+    //        slidesToShow: 3,
+    //        slidesToScroll: 1,
+    //        autoplay: false,
+    //        autoplaySpeed: 2000,
+    //        centerMode: true,
+    //        focusOnSelect: true,
+    //        dots: true
+    //    });
+    //});
 
 })
 

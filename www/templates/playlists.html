@@ -4,7 +4,12 @@
         <ion-item class="item-body" href="#/app/playlists/{{kind.slug}}">
           <ion-item class="item-divider">{{kind.title}}</ion-item>
           <ion-item>
-              <img ng-src="{{kind.img}}" /><ion-spinner></ion-spinner>
+                <slick fade="true" cssEase="linear" infinite="true" dots="false" autoplay="true" speed="300" slides-to-show="1" touch-move="false" slides-to-scroll="1">
+                  <div ng-repeat="wish in wishes | filter:{ kind: kind.slug }">
+                      <img ng-src="{{wish.preview.url}}" ng-if="!wish.preview.width" />
+                      <img ng-src="{{wish.preview.url}}" width="{{wish.preview.width}}" ng-if="wish.preview.width" />
+                  </div>
+                </slick>
           </ion-item>
           <!--
           <ion-item class="item-avatar">

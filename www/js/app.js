@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -80,6 +80,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize'])
       api_wishes: '/test_data/digitalxmas_api_v1_wishes_.json'
   };
 
+  $rootScope.wishes = [];
   $rootScope.kinds = [{
         title: 'Auguri da Fabriano',
         slug: 'wishes_fabriano'
@@ -88,11 +89,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize'])
         slug: 'wishes_other'
     }];
 
+    $rootScope.get_media_preview = function (wish) {
+        var preview = {
+            url: null,
+            width: null,
+            height: null
+        };
+        if (wish.url.indexOf('youtube') !== -1) {
+            var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
+            preview.url = "http://img.youtube.com/vi/" + youtube_id + "/0.jpg";
+            // var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=0";
+            // embedhtml = '<iframe width="420" height="315" src="';
+            // embedhtml += embed_url + '"> </iframe>';
+        } else if (wish.kind == "wishes_fabriano") {
+            preview.url = wish.url;
+            preview.width = 420;
+            preview.height = 315;
+        }
+        // trust the html content here
+        return preview;
+    };
+
     $http.get($rootScope.config.api_wishes)
         .then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available
-            $rootScope.wishes = response.data;
+            var wishes = [];
+            angular.forEach(response.data, function (wish) {
+
+                wish.preview = $rootScope.get_media_preview(wish);
+                wishes.push(wish);
+            });
+            $rootScope.wishes = wishes;
+
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
