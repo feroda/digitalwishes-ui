@@ -25,7 +25,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-
   .state('app', {
     url: '/app',
     abstract: true,
@@ -73,18 +72,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize'])
   $urlRouterProvider.otherwise('/app/playlists');
 })
 .run(function($rootScope, $http) {
-  $rootScope.kinds = [
-    {
+
+  $rootScope.config = {
+      api_wishes: '/api/v1/wishes/'
+  };
+  $rootScope.config = {
+      api_wishes: '/test_data/digitalxmas_api_v1_wishes_.json'
+  };
+
+  $rootScope.kinds = [{
         title: 'Auguri da Fabriano',
-        id: 1,
         slug: 'wishes_fabriano'
     }, {
         title: 'Auguri per tutti',
-        id: 2,
         slug: 'wishes_other'
-    }
-  ];
-    $http.get('/test_data/digitalxmas_api_v1_wishes_.json')
+    }];
+
+    $http.get($rootScope.config.api_wishes)
         .then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available

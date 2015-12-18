@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $http, $rootScope) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -28,13 +28,29 @@ angular.module('starter.controllers', [])
   $scope.login = function() {
     $scope.modal.show();
   };
-  $scope.fab_photos = ['/test_data/photo_fab/1.jpg', '/test_data/photo_fab/2.jpg'];
+
+  $scope.fab_photos = [{
+      url: '/img/fabriano/antoniostopponi.jpg',
+      author: 'Antonio Stopponi'
+  },{
+      url: '/img/fabriano/antoniostopponi3.jpg',
+      author: 'Antonio Stopponi'
+  },{
+      url: '/img/fabriano/antoniostopponi2.jpg',
+      author: 'Antonio Stopponi'
+  },{
+      url: '/img/fabriano/fabriziolampini.jpg',
+      author: 'Fabrizio Lampini'
+  },{
+      url: '/img/fabriano/matteomingo.jpg',
+      author: 'Matteo Mingo'
+  }];
 
   // Perform the login action when the user submits the login form
   $scope.doAddFabrianoWish = function() {
     console.log('Adding wish...', $scope.new_wish);
 
-    $http.post('/api/v1/wishes/', $scope.new_wish)
+    $http.post($rootScope.config.api_wishes, $scope.new_wish)
         .then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available
