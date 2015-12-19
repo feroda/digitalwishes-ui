@@ -70,18 +70,6 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope, $rootScope) {
 
-    //angular.forEach($rootScope.kinds, function (kind) {
-    //    $('.media-list-{{kind.slug}}').slick({
-    //        slidesToShow: 3,
-    //        slidesToScroll: 1,
-    //        autoplay: false,
-    //        autoplaySpeed: 2000,
-    //        centerMode: true,
-    //        focusOnSelect: true,
-    //        dots: true
-    //    });
-    //});
-
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $rootScope, $sce) {
@@ -94,18 +82,19 @@ angular.module('starter.controllers', [])
         }
     });
 
-    $scope.get_html_preview = function (wish) {
+    $scope.play = function (wish) {
 
-        var embedhtml;
+        var html;
         if (wish.url.indexOf('youtube') !== -1) {
             var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
-            var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=0";
-            embedhtml = '<iframe width="420" height="315" src="';
-            embedhtml += embed_url + '"> </iframe>';
+            var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=1&showinfo=0";
+            html = '<iframe width="480" height="350" src="';
+            html += embed_url + '"> </iframe>';
             // trust the html content here
         } else if (wish.kind == "wishes_fabriano") {
-            embedhtml = '<img src="' + wish.url + '" width="420" height="315" />';
+            return false; //TODO
+            html = '<img src="' + wish.url + '" width="420" height="315" />';
         }
-        return $sce.trustAsHtml(embedhtml);
+        document.getElementById('wish-'+wish.id).innerHTML = html;
     };
 });
