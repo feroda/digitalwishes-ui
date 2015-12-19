@@ -25,7 +25,8 @@ angular.module('starter.controllers', [])
   };
 
   // Open the login modal
-  $scope.login = function() {
+  $scope.addWish = function(src) {
+    $scope.new_wish.url = src;
     $scope.modal.show();
   };
 
@@ -45,6 +46,9 @@ angular.module('starter.controllers', [])
       url: '/img/fabriano/matteomingo.jpg',
       author: 'Matteo Mingo'
   }];
+  angular.forEach($scope.fab_photos, function (photo) {
+      photo.preview = $rootScope.get_media_preview(photo);
+  });
 
   // Perform the login action when the user submits the login form
   $scope.doAddFabrianoWish = function() {

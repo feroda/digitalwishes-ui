@@ -1,1 +1,10 @@
 /* Empty. Add your own CSS if you like */
+.photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.available-scroller {
+    height: 250px;
+}

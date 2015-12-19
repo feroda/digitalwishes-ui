@@ -8,12 +8,10 @@
   <ion-content>
     <form ng-submit="doAddFabrianoWish()">
       <div class="list">
-          <ion-row>
-              <ion-col ng-repeat="fab_photo in fab_photos">
-                  <!-- <a href="#" ng-click="{{new_wish.url = fab_photo.url;}}"><img ng-src="{{fab_photo.url}}" height="150" /></a> -->
-                  <!-- <em>foto da {{fab_photo.author}}</em> -->
-              </ion-col>
-          </ion-row>
+          <ion-item class="photo">
+              <img ng-src="{{new_wish.url}}" height="200" />
+          <!-- <em>foto da {{fab_photo.author}}</em> -->
+          </ion-item>
         <label class="item item-input">
           <span class="input-label">Il tuo nome</span>
           <input type="text" ng-model="new_wish.author_name">

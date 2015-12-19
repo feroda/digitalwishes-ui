@@ -101,7 +101,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
             // var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=0";
             // embedhtml = '<iframe width="420" height="315" src="';
             // embedhtml += embed_url + '"> </iframe>';
-        } else if (wish.kind == "wishes_fabriano") {
+        } else {
             preview.url = wish.url;
             preview.width = 420;
             preview.height = 315;
