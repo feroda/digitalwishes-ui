@@ -1,6 +1,6 @@
 <ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Augura buone feste da Fabriano</h1>
+  <ion-header-bar class="bar-calm">
+    <h1 class="title">Augura buone feste da {{kind_humanized}}</h1>
     <div class="buttons">
       <button class="button button-clear" ng-click="closeLogin()">Close</button>
     </div>
@@ -8,17 +8,29 @@
   <ion-content>
     <form ng-submit="doAddFabrianoWish()">
       <div class="list">
-          <ion-item class="photo">
-              <img ng-src="{{new_wish.url}}" height="200" />
+          <ion-item class="photo" ng-if="new_wish.url">
+              <img ng-src="{{new_wish.preview_url}}" height="200" />
           <!-- <em>foto da {{fab_photo.author}}</em> -->
           </ion-item>
+        <label class="item item-input" ng-if="!new_wish.url">
+          <span class="input-label">Link video YouTube</span>
+          <input type="text" ng-model="new_wish.url"placeholder=" vedi un video YouTube, clicca su condividi e copia l'indirizzo" >
+        </label>
         <label class="item item-input">
           <span class="input-label">Il tuo nome</span>
           <input type="text" ng-model="new_wish.author_name">
         </label>
         <label class="item item-input">
+          <span class="input-label">La tua email</span>
+          <input type="text" ng-model="new_wish.author_email">
+        </label>
+        <label class="item item-input">
           <span class="input-label col-center">La tua dedica</span>
-          <textarea ng-model="new_wish.dedication" rows="10" />
+          <textarea ng-model="new_wish.dedication" class="text-middle"> </textarea>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Link al tuo logo</span>
+          <input type="text" ng-model="new_wish.author_avatar" placeholder=" se associazione, azienda, gruppo, ..." />
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Carica il tuo augurio!</button>

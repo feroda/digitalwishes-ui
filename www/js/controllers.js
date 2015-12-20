@@ -25,8 +25,10 @@ angular.module('starter.controllers', [])
   };
 
   // Open the login modal
-  $scope.addWish = function(src) {
+  $scope.addWish = function(kind_humanized, src, preview_url) {
+    $scope.kind_humanized = kind_humanized;
     $scope.new_wish.url = src;
+    $scope.new_wish.preview_url = preview_url;
     $scope.modal.show();
   };
 
@@ -58,7 +60,7 @@ angular.module('starter.controllers', [])
         .then(function successCallback(response) {
             // this callback will be called asynchronously
             // when the response is available
-            alert("il tuo augurio e' stato aggiunto!");
+            alert("il tuo augurio e' stato aggiunto! Prima di essere visualizzato dovrà essere approvato dallo staff.");
         }, function errorCallback(response) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.

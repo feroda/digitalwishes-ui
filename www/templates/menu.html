@@ -19,15 +19,16 @@
     <ion-content style="padding: 1em 0;">
       <ion-list>
         <ion-item class="item-divider"> Da Fabriano </ion-item>
-        <ion-item menu-close ng-click="addWish(fab_photo.preview.url)" ng-repeat="fab_photo in fab_photos" item-width="90%" >
+        <ion-item menu-close ng-click="addWish('Fabriano', fab_photo.preview.url, fab_photo.preview.url)" ng-repeat="fab_photo in fab_photos" item-width="90%" >
           <a href="#"><img ng-src="{{fab_photo.preview.url}}" width="100%" /></a>
         </ion-item>
-        <ion-item menu-close href="#/app/onlinevideo/add/">
-          Da video online
+        <ion-item class="item-divider"> Da video online </ion-item>
+        <ion-item menu-close ng-click="addWish('YouTube')" >
+            <img src="https://www.youtube.com/yt/brand/media/image/YouTube-icon-full_color.png" width="100%" />
         </ion-item>
-        <ion-item menu-close href="#/app/you/choose/">
+        <!-- <ion-item menu-close href="#/app/you/choose/">
           Da... te!
-        </ion-item>
+        </ion-item> -->
       </ion-list>
     </ion-content>
   </ion-side-menu>

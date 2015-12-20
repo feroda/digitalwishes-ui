@@ -8,3 +8,18 @@
 .available-scroller {
     height: 250px;
 }
+
+.item-input input, .item-input textarea {
+    border: 1px dashed #387EF5;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+}
+.boxsizingBorder {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.text-middle {
+    height: 8em;
+}
