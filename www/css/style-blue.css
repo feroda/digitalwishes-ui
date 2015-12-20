@@ -1,0 +1,47 @@
+.mybody {
+    padding: 40px 15px;
+    margin-top: 1em;
+    border-radius: 0.5em;
+}
+.blue {
+    background: #3498DB none repeat scroll 0% 0%;
+    color: #FFF;
+}
+h2 {
+    font-family: Pacifico;
+    font-size: 36px;
+    margin: 20px auto;
+    text-align: center;
+}
+#media-list, #media-show {
+    margin: 4em 4em;
+    padding: 0.5em 1em;
+}
+
+
+.media-thumbnail {
+    border: 1px solid white;
+    border-radius: 0.2em;
+    margin: 0px 0.5em;
+    width: 420px;
+    height: 315px
+}
+
+/*
+.media-thumbnail {
+    border: 1px solid white;
+    border-radius: 0.2em;
+    margin: 0px 0.5em;
+}
+*/
+
+.media-info {
+    height: 320px;
+    background-color: rgb(125, 197, 225);
+    border-radius: 25px;
+    border: 2px solid;
+    padding: 5%;
+    font-size: large;
+    width: 50%;
+    float: right;
+}

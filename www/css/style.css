@@ -6,12 +6,33 @@
 }
 
 .wish-body {
-  height: 73%;
+  height: 71%;
 }
 
-.wish-preview {
+.wish-cell {
   padding: 0px;
-  text-align: center;
+  border: 0px;
+  vertical-align: middle;
+}
+
+.wish-row {
+    padding: 1em 1em;
+    border: 1px solid #3498DB;
+    border-radius: 1em;
+    margin-bottom: 1em !important;
+    margin-top: 1em !important;
+    display: flex;
+}
+
+.black {
+    background-color: black;
+}
+
+.wish-bottom {
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 0px solid white;
+    border-right: 0px solid white;
 }
 
 .available-scroller {
