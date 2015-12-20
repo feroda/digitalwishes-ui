@@ -53,8 +53,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
       url: '/playlists',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/browse.html',
+          controller: 'BrowseCtrl'
         }
       }
     })

@@ -1,5 +1,22 @@
-<ion-view view-title="Browse">
+<ion-view view-title="Tutti gli auguri!">
   <ion-content>
-    <h1>Browse</h1>
+    <div class="row responsive-sm" ng-repeat="wish in wishes"> <!-- | filter:{ kind: playlistId }"> -->
+    <!-- <div class="row" collection-repeat="wish in wishes" item-height="315px" item-width="99%"> | filter:{ kind: playlistId }"> -->
+      <div class="col col-50">
+          <div class="item wish-preview" id="wish-{{wish.id}}" ng-click="play(wish)">
+              <img ng-src="{{wish.preview.url}}" ng-if="!wish.preview.width" />
+              <img ng-src="{{wish.preview.url}}" width="{{wish.preview.width}}" ng-if="wish.preview.width" />
+          </div>
+      </div>
+      <div class="col col-50">
+          <ion-item class="item-divider">{{wish.title}}</ion-item>
+          <ion-item class="wish-body"><em>{{wish.dedication}}</em></ion-item>
+          <div class="item item-avatar col-bottom">
+              <img ng-src="{{wish.author_avatar}}">
+              <h2>{{ wish.author_name }}</h2>
+              <p>{{ wish.approved_on }}</p>
+          </div>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

@@ -5,6 +5,15 @@
   justify-content: center;
 }
 
+.wish-body {
+  height: 73%;
+}
+
+.wish-preview {
+  padding: 0px;
+  text-align: center;
+}
+
 .available-scroller {
     height: 250px;
 }

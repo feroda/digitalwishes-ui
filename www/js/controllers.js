@@ -78,6 +78,10 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('BrowseCtrl', function($scope, $rootScope) {
+
+})
+
 .controller('PlaylistCtrl', function($scope, $stateParams, $rootScope, $sce) {
 
     $scope.title = null;
