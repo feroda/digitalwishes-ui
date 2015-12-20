@@ -74,10 +74,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
 .run(function($rootScope, $http) {
 
   $rootScope.config = {
-      api_wishes: '/api/v1/wishes/'
+      api_wishes: '/api/v1/wishes/',
+      base_url: 'http://app.fabrianodigital.it/ui/'
   };
+
   $rootScope.config = {
-      api_wishes: '/test_data/digitalxmas_api_v1_wishes_.json'
+     api_wishes: '/test_data/digitalxmas_api_v1_wishes_.json',
+     base_url: 'http://localhost:8100/'
   };
 
   $rootScope.wishes = [];

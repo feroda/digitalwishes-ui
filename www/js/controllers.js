@@ -33,19 +33,19 @@ angular.module('starter.controllers', [])
   };
 
   $scope.fab_photos = [{
-      url: '/img/fabriano/antoniostopponi.jpg',
+      url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi.jpg',
       author: 'Antonio Stopponi'
   },{
-      url: '/img/fabriano/antoniostopponi3.jpg',
+      url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi3.jpg',
       author: 'Antonio Stopponi'
   },{
-      url: '/img/fabriano/antoniostopponi2.jpg',
+      url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi2.jpg',
       author: 'Antonio Stopponi'
   },{
-      url: '/img/fabriano/fabriziolampini.jpg',
+      url: $rootScope.config.base_url + 'img/fabriano/fabriziolampini.jpg',
       author: 'Fabrizio Lampini'
   },{
-      url: '/img/fabriano/matteomingo.jpg',
+      url: $rootScope.config.base_url + 'img/fabriano/matteomingo.jpg',
       author: 'Matteo Mingo'
   }];
   angular.forEach($scope.fab_photos, function (photo) {
