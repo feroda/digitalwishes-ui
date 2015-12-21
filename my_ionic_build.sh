@@ -1,3 +1,10 @@
+#!/bin/bash
+
+ionic build
+cp platforms/browser/build/package.zip ../fabrianodigital/ui/
+cd ../fabrianodigital/ui/
+unzip package.zip
+cd -
 
 # During package.zip decompression I get error in some binary files
 
