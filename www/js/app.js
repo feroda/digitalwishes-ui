@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick', 'ngDropdowns'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -85,11 +85,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
 
   $rootScope.wishes = [];
   $rootScope.kinds = [{
-        title: 'Auguri da Fabriano',
-        slug: 'wishes_fabriano'
+        text: 'Tutti gli auguri',
+        value: null
     }, {
-        title: 'Auguri per tutti',
-        slug: 'wishes_other'
+        text: 'Cartoline da Fabriano',
+        value: 'wishes_fabriano'
+    }, {
+        text: 'Altri auguri',
+        value: 'wishes_other'
     }];
 
     $rootScope.get_media_preview = function (wish) {
@@ -113,6 +116,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
         return preview;
     };
 
+    $rootScope.get_wishes_randomized = function () {
+        //THIS IS NEEDED TO AVOID the nginfdig error
+        //http://stackoverflow.com/questions/20963462/rootscopeinfdig-error-caused-by-filter
+        //https://docs.angularjs.org/error/$rootScope/infdig?p0=10&p1=[[{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:272,%22oldVal%22:271},{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:%22We%20are%20happy%20from%20Fabriano%20Part%202%22},{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:%224%22},{%22msg%22:%22!wish.preview.width%22,%22newVal%22:true},{%22msg%22:%22wish.preview.width%22,%22newVal%22:null},{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:%22%22},{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:%22%22},{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:%22%22},{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:%22%28...nessuna%20dedica%20inserita...%29%22},{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:%22http:%2F%2Fimg.youtube.com%2Fvi%2FeMFsnEqybO8%2F0.jpg%22}],[{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:274,%22oldVal%22:272}],[{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:277,%22oldVal%22:274}],[{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:279,%22oldVal%22:277}],[{%22msg%22:%22fn:%20regularInterceptedExpression%22,%22newVal%22:283,%22oldVal%22:279}]]
+        var w = [];
+        var prev_el = null;
+        angular.forEach($rootScope.wishes, function (el) {
+            if (!prev_el) {
+                prev_el = el;
+            } else {
+                var rand = 0.5 - Math.random();
+                if (rand > 0) {
+                    w.push(el);
+                } else {
+                    w.push(prev_el);
+                    prev_el = el;
+                }
+            }
+        });
+        w.push(prev_el);
+        return w;
+    };
+
     $http.get($rootScope.config.api_wishes)
         .then(function successCallback(response) {
             // this callback will be called asynchronously
@@ -124,6 +150,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
                 wishes.push(wish);
             });
             $rootScope.wishes = wishes;
+            $rootScope.wishes_random = $rootScope.get_wishes_randomized();
 
         }, function errorCallback(response) {
             // called asynchronously if an error occurs

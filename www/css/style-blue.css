@@ -1,7 +1,8 @@
 .mybody {
-    padding: 40px 15px;
+    padding: 0px 15px;
     margin-top: 1em;
     border-radius: 0.5em;
+    font-size: large;
 }
 .blue {
     background: #3498DB none repeat scroll 0% 0%;

@@ -5,10 +5,17 @@
   justify-content: center;
 }
 
+.wish-filters .wrap-dd-select {
+    height: 100%;
+    width: 100%;
+    // background-color: #33CD5F;
+    // color: white;
+}
+
 .wish-card {
     padding: 0px 0em 1px 0;
-    margin-bottom: 3em !important;
-    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    margin-top: 3em !important;
 }
 
 .wish-body {
@@ -39,6 +46,7 @@
     border: 0px solid #3498DB;
     border-radius: 0em;
     display: flex;
+    padding: 0 1px;
 }
 
 .black {

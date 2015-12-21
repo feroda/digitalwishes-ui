@@ -1,7 +1,16 @@
-<ion-view view-title="Buon Natale Fabriano!">
+<ion-view view-title="Buone Feste Fabriano!">
   <ion-content class="mybody">
   <div class="container">
-    <div class="wish-card" ng-repeat="wish in wishes"> <!-- | filter:{ kind: playlistId }"> -->
+      <div class="row wish-filters">
+          <div class="col">
+            <div dropdown-select="kinds" dropdown-model="kind_selected">
+            </div>
+          </div>
+          <div class="col">
+                <a class="button button-large button-energized" href="#" ng-click="update_random()">Ordine casuale</a>
+          </div>
+       </div>
+       <div class="wish-card" ng-repeat="wish in wishes_random|filter:{kind: kind_selected.value}:comp_category">
        <h2 class="item-divider wish-top">{{wish.title}}</h2>
        <div class="responsive-sm wish-row">    <!-- <div class="row" collection-repeat="wish in wishes" item-height="315px" item-width="99%"> | filter:{ kind: playlistId }"> -->
           <div class="item wish-cell black" id="wish-{{wish.id}}" ng-click="play(wish)">
@@ -18,5 +27,6 @@
           </div>
         </div>
   </div>
+  <div style="clear:both; height:5em;"> </div>
   </ion-content>
 </ion-view>

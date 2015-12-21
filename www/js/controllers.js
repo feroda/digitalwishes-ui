@@ -80,6 +80,17 @@ angular.module('starter.controllers', [])
 
 .controller('BrowseCtrl', function($scope, $rootScope) {
 
+    $scope.update_random = function() {
+        $rootScope.wishes_random = $rootScope.get_wishes_randomized();
+    };
+
+    $scope.kind_selected = { text: 'Tutti gli auguri', value: null };
+    $scope.comp_category = function (actual, expected) {
+        if (!expected || actual == expected) {
+            return true;
+        }
+    };
+
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $rootScope, $sce) {

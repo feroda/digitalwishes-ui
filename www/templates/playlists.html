@@ -2,10 +2,10 @@
   <ion-content>
     <ion-card ng-repeat="kind in kinds">
         <ion-item class="item-body" href="#/app/playlists/{{kind.slug}}">
-          <ion-item class="item-divider">{{kind.title}}</ion-item>
+          <ion-item class="item-divider">{{kind.text}}</ion-item>
           <ion-item>
                 <slick fade="true" cssEase="linear" infinite="true" dots="false" autoplay="true" speed="300" slides-to-show="1" touch-move="false" slides-to-scroll="1">
-                  <div ng-repeat="wish in wishes | filter:{ kind: kind.slug }">
+                  <div ng-repeat="wish in wishes | filter:{ kind: kind.value }">
                       <img ng-src="{{wish.preview.url}}" ng-if="!wish.preview.width" />
                       <img ng-src="{{wish.preview.url}}" width="{{wish.preview.width}}" ng-if="wish.preview.width" />
                   </div>

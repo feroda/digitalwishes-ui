@@ -8,6 +8,7 @@
     "angular-sanitize": "1.4.3"
   },
   "dependencies": {
-    "angular-slick": "~0.2.1"
+    "angular-slick": "~0.2.1",
+    "angular-dropdowns": "~1.5.1"
   }
 }
