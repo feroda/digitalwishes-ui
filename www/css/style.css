@@ -7,6 +7,14 @@
 
 .wish-body {
   height: 71%;
+  border-right: 0px solid white;
+  border-top: 0px solid white;
+}
+
+.wish-top {
+    border-radius: 0 1em 1em 0;
+    border: 1px solid #3498DB;
+    border-left: 0px solid #3498DB;
 }
 
 .wish-cell {
@@ -15,10 +23,15 @@
   vertical-align: middle;
 }
 
-.wish-row {
-    padding: 1em 1em;
+.wish-cell-right {
+    border-radius: 0 1em 1em 0;
     border: 1px solid #3498DB;
-    border-radius: 1em;
+}
+
+.wish-row {
+    padding: 0px 0em 1px 0;
+    border: 0px solid #3498DB;
+    border-radius: 0em;
     margin-bottom: 1em !important;
     margin-top: 1em !important;
     display: flex;
@@ -33,6 +46,7 @@
     border-left: 1px solid white;
     border-bottom: 0px solid white;
     border-right: 0px solid white;
+    border-radius: 0 0 1em 0;
 }
 
 .available-scroller {
