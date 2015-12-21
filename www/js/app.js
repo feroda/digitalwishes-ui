@@ -145,12 +145,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
         if (wish.kind == "wishes_fabriano") {
             return false; //TODO
             html = '<img src="' + wish.url + '" width="420" height="315" />';
-        } else if (wish.url.indexOf('youtube') !== -1) {
+        } else if ((wish.url.indexOf('youtube') !== -1)||(wish.url.indexOf('youtu.be') !== -1)) {
+            // YouTube Video
             var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
-            var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=1&showinfo=0";
+            embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=1&showinfo=0";
             html = '<iframe width="480" height="350" src="';
             html += embed_url + '"> </iframe>';
             // trust the html content here
+        }
+        else if ((wish.url.indexOf('facebook.com') !== -1) && (wish.url.indexOf('videos/') !== -1)) {
+            // Facebook Video
+            var facebook_id = wish.url.substr(wish.url.indexOf("videos/")+7);
+            embed_url = "https://www.facebook.com/video/embed?video_id=" + facebook_id;
+            html = '<iframe width="480" height="350" src="'+embed_url+'" class="wish-thumbnail"> </iframe>';
         }
 
         document.getElementById('wish-'+wish.id).innerHTML = html;
