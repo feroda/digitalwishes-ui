@@ -127,7 +127,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
                 prev_el = el;
             } else {
                 var rand = 0.5 - Math.random();
-                if (rand > 0) {
+                if (rand >= 0) {
                     w.push(el);
                 } else {
                     w.push(prev_el);

@@ -81,6 +81,7 @@ angular.module('starter.controllers', [])
 .controller('BrowseCtrl', function($scope, $rootScope) {
 
     $scope.update_random = function() {
+        $rootScope.wishes = $rootScope.wishes_random;
         $rootScope.wishes_random = $rootScope.get_wishes_randomized();
     };
 
