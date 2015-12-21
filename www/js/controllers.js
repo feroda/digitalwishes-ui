@@ -85,7 +85,7 @@ angular.module('starter.controllers', [])
         $rootScope.wishes_random = $rootScope.get_wishes_randomized();
     };
 
-    $scope.kind_selected = { text: 'Tutti gli auguri', value: null };
+    $scope.kind_selected = { text: 'Scegli gli auguri', value: null };
     $scope.comp_category = function (actual, expected) {
         if (!expected || actual == expected) {
             return true;

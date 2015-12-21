@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.header-item {
+    font-size: x-large !important;
+}
+
 .wish-filters .wrap-dd-select {
     height: 100%;
     width: 100%;
