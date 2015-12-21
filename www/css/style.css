@@ -23,11 +23,15 @@
 }
 
 .wish-body {
-  height: 81%;
-  border-right: 0px solid white;
-  border-top: 0px solid white;
-  font-size: x-large;
+    height: 81%;
+    border-right: 0px solid white;
+    border-top: 0px solid white;
+    font-size: x-large;
+    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.2em;
 }
+
 
 .wish-top {
     border-radius: 1em 1em 0 0;
