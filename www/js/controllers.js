@@ -104,19 +104,4 @@ angular.module('starter.controllers', [])
         }
     });
 
-    $scope.play = function (wish) {
-
-        var html;
-        if (wish.url.indexOf('youtube') !== -1) {
-            var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
-            var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=1&showinfo=0";
-            html = '<iframe width="480" height="350" src="';
-            html += embed_url + '"> </iframe>';
-            // trust the html content here
-        } else if (wish.kind == "wishes_fabriano") {
-            return false; //TODO
-            html = '<img src="' + wish.url + '" width="420" height="315" />';
-        }
-        document.getElementById('wish-'+wish.id).innerHTML = html;
-    };
 });
