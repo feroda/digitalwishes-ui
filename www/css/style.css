@@ -93,6 +93,10 @@
     height: 8em;
 }
 
+/* .bar-margin {
+    margin-bottom: 0.5em;
+} */
+
 /* text scrolling by http://www.quackit.com/html/html_editors/scratchpad/?example=/css/codes/marquees/scrolling_text*/
 .text-scrolling {
     height: 50px;
