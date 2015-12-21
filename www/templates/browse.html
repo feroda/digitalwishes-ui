@@ -12,8 +12,8 @@
        </div>
        <!-- <slick slides-to-show="4" slides-to-scroll="2" autoplay="true" speed="200" dots="true" arrows="true" verticalSwiping="true" vertical="true"> -->
        <div class="wish-card" ng-repeat="wish in wishes_random|filter:{kind: kind_selected.value}:comp_category">
-       <h2 class="item-divider wish-top">{{wish.title}}</h2>
-       <div class="responsive-sm wish-row">    <!-- <div class="row" collection-repeat="wish in wishes" item-height="315px" item-width="99%"> | filter:{ kind: playlistId }"> -->
+       <h3 class="item-divider wish-top">{{wish.title}}</h3>
+       <div class="responsive-sm wish-row">   <!-- <div class="row" collection-repeat="wish in wishes" item-height="315px" item-width="99%"> | filter:{ kind: playlistId }"> -->
           <div class="item wish-cell wish-cell-preview" id="wish-{{wish.id}}" ng-click="play(wish)">
               <img class="img-preview" ng-src="{{wish.preview.url}}" />
               <!-- OLD with preview image width set
@@ -21,7 +21,9 @@
               <img ng-src="{{wish.preview.url}}" ng-if="wish.preview.width" /> -->
           </div>
           <div class="col wish-cell blue wish-cell-right">
-              <ion-item class="wish-body blue"><em>{{wish.dedication||"(...nessuna dedica inserita...)"}}</em></ion-item>
+              <ion-item class="wish-body blue">
+                  <em>{{wish.dedication||"(...nessuna dedica inserita...)"}}</em>
+              </ion-item>
               <div class="item item-avatar wish-bottom blue">
                   <img ng-src="{{wish.author_avatar}}">
                   <em>{{ wish.author_name||"(...nessun autore inserito...)" }}</em>
