@@ -101,7 +101,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
             width: null,
             height: null
         };
-        if (wish.url.indexOf('youtube') !== -1) {
+        if ((wish.url.indexOf('youtube') !== -1)||(wish.url.indexOf('youtu.be') !== -1)) {
             var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
             preview.url = "http://img.youtube.com/vi/" + youtube_id + "/0.jpg";
             // var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=0";
