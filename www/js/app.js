@@ -117,7 +117,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
             preview.url = "http://img.youtube.com/vi/" + youtube_id + "/0.jpg";
             preview.kind = 'video';
         } else if ((wish.url.indexOf('facebook') !== -1) && (wish.url.indexOf('video') !== -1)) {
-            preview.url = "http://img.youtube.com/vi/" + youtube_id + "/0.jpg"; // TODO
+            var facebook_id = wish.url.substr(wish.url.indexOf("videos/")+7);
+            preview.url = "http://graph.facebook.com/" + facebook_id + "picture?type=large";
             preview.kind = 'video';
         } else {
             preview.url = wish.url;
