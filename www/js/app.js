@@ -59,6 +59,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
       }
     })
 
+  .state('app.detail', {
+    url: '/wish/:wish_id',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/detail.html',
+        controller: 'DetailCtrl'
+      }
+    }
+  })
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -71,8 +80,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 })
-.run(function($rootScope, $http) {
+.run(function($rootScope, $http, $state) {
 
+  $rootScope.$state = $state;
   $rootScope.config = {
       api_wishes: '/api/v1/wishes/',
       base_url: 'http://app.fabrianodigital.it/ui/'
@@ -141,9 +151,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
         return w;
     };
 
-    $rootScope.play = function (wish) {
+    $rootScope.play = function (wish, width, height) {
 
         var html;
+        if (width) {
+            width = ' width="'+width+'" ';
+        } else {
+            width = '';
+        }
+        if (height) {
+            height = ' height="'+height+'" ';
+        } else {
+            height = '';
+        }
+
         if (wish.kind == "wishes_fabriano") {
             return false; //TODO
             html = '<img src="' + wish.url + '" width="420" height="315" />';
@@ -151,35 +172,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
             // YouTube Video
             var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
             embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=1&showinfo=0";
-            html = '<iframe width="480" height="350" src="';
-            html += embed_url + '"> </iframe>';
+            html = '<iframe src="' + embed_url + '" ';
+            html += width + height + '> </iframe>';
             // trust the html content here
         }
         else if ((wish.url.indexOf('facebook.com') !== -1) && (wish.url.indexOf('videos/') !== -1)) {
             // Facebook Video
             var facebook_id = wish.url.substr(wish.url.indexOf("videos/")+7);
             embed_url = "https://www.facebook.com/video/embed?video_id=" + facebook_id;
-            html = '<iframe width="480" height="350" src="'+embed_url+'" class="wish-thumbnail"> </iframe>';
+            html = '<iframe src="'+embed_url+'" class="wish-thumbnail" ';
+            html += width + height + '> </iframe>';
         }
 
         document.getElementById('wish-'+wish.id).innerHTML = html;
     };
 
-    $http.get($rootScope.config.api_wishes)
-        .then(function successCallback(response) {
-            // this callback will be called asynchronously
-            // when the response is available
-            var wishes = [];
-            angular.forEach(response.data, function (wish) {
+    $rootScope.get_wishes = function(cb) {
 
-                wish.preview = $rootScope.get_media_preview(wish);
-                wishes.push(wish);
+        $http.get($rootScope.config.api_wishes)
+            .then(function successCallback(response) {
+                // this callback will be called asynchronously
+                // when the response is available
+                var wishes = [];
+                angular.forEach(response.data, function (wish) {
+
+                    wish.preview = $rootScope.get_media_preview(wish);
+                    wishes.push(wish);
+                });
+                $rootScope.wishes = wishes;
+                $rootScope.wishes_random = $rootScope.get_wishes_randomized();
+
+                if (cb) { cb(); }
+
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
             });
-            $rootScope.wishes = wishes;
-            $rootScope.wishes_random = $rootScope.get_wishes_randomized();
+    };
 
-        }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-        });
+    $rootScope.get_wishes();
 });

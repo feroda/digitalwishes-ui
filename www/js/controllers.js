@@ -74,6 +74,36 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('DetailCtrl', function($scope, $stateParams, $rootScope) {
+
+    $scope.wish = {
+        "title": "Augurio non trovato",
+        "dedication":"L'augurio che cerchi non è stato trovato, ma ti augiriamo comunque buone feste!",
+        "url":"",
+        "description":"",
+        "author_name":"Makerspace",
+        "author_avatar":"",
+        "tag_place":"",
+        "tag_subject":"",
+        "kind": "wishes_other"
+    };
+
+    $scope.init_detail = function() {
+        var img = $('.photo');
+        $rootScope.play($scope.wish, img.width(), img.height());
+    };
+
+    //TODO view per recuperare il dettaglio di un augurio
+    $rootScope.get_wishes(function () {
+        angular.forEach($rootScope.wishes, function (el) {
+            if (el.id == $stateParams.wish_id) {
+                $scope.wish = el;
+            }
+        });
+        setTimeout($scope.init_detail, 500);
+    });
+})
+
 .controller('PlaylistsCtrl', function($scope, $rootScope) {
 
 })
