@@ -183,6 +183,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
             embed_url = "https://www.facebook.com/video/embed?video_id=" + facebook_id;
             html = '<iframe src="'+embed_url+'" class="wish-thumbnail" ';
             html += width + height + '> </iframe>';
+        } else {
+            return false;
         }
 
         document.getElementById('wish-'+wish.id).innerHTML = html;
