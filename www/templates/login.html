@@ -36,6 +36,24 @@
           <span class="input-label">Link al tuo logo</span>
           <input type="text" ng-model="new_wish.author_avatar" placeholder=" se associazione, azienda, gruppo, ..." />
         </label>
+        <label class="item item-input" ng-hide="send_friends_pressed">
+          <button class="button button-block button-balanced" type="button" ng-click="send_friends = true; send_friends_pressed = true;">Invia come mail agli amici</button>
+        </label>
+        <label class="item item-input" ng-if="send_friends">
+          <span class="input-label">Indirizzi email</span>
+          <input type="text" ng-model="new_wish.email_to" placeholder=" anche più di uno separato da virgola" />
+        </label>
+        <label class="item item-toggle" ng-if="send_friends">
+          <span class="input-label">Rendi l'augurio privato</span>
+
+          <span class="toggle">
+
+          <input type="checkbox" ng-model="new_wish.is_private" />
+          <div class="track">
+                   <div class="handle"></div>
+                      </div>
+          </span>
+        </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Carica il tuo augurio!</button>
         </label>
