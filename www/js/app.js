@@ -97,22 +97,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
 
     $rootScope.get_media_preview = function (wish) {
         var preview = {
-            url: null,
+            url: wish.url,
             width: null,
-            height: null
+            height: null,
+            kind: 'url'
         };
         if ((wish.url.indexOf('youtube') !== -1)||(wish.url.indexOf('youtu.be') !== -1)) {
             var youtube_id = wish.url.substr(wish.url.indexOf("?v=")+3);
             preview.url = "http://img.youtube.com/vi/" + youtube_id + "/0.jpg";
-            // var embed_url = "http://www.youtube.com/embed/" + youtube_id + "?autoplay=0";
-            // embedhtml = '<iframe width="420" height="315" src="';
-            // embedhtml += embed_url + '"> </iframe>';
+            preview.kind = 'video';
+        } else if ((wish.url.indexOf('facebook') !== -1) && (wish.url.indexOf('video') !== -1)) {
+            preview.url = "http://img.youtube.com/vi/" + youtube_id + "/0.jpg"; // TODO
+            preview.kind = 'video';
         } else {
             preview.url = wish.url;
             preview.width = 420;
             preview.height = 315;
+            preview.kind = 'img';
         }
-        // trust the html content here
         return preview;
     };
 
