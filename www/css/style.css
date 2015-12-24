@@ -18,15 +18,16 @@
 }
 
 .wish-card {
-    padding: 0px 0em 1px 0;
+    padding: 0.1em;
     margin-bottom: 1em !important;
     margin-top: 3em !important;
+    border: 1px solid #3498DB;
+    border-radius: 1em 1em 0 0;
 }
 
 .wish-body {
-    height: 81%;
-    border-right: 0px solid white;
-    border-top: 0px solid white;
+    height: 79%;
+    border: 0px solid white;
     font-size: x-large;
     text-overflow: clip;
     white-space: normal;
@@ -35,10 +36,11 @@
 
 
 .wish-top {
-    border-radius: 1em 1em 0 0;
-    border: 1px solid #3498DB;
+    background-color: white;
+    border-bottom: 1px solid #3498DB;
     margin-bottom: 0px;
     text-align: center;
+    border-radius: 1em 1em 0 0;
 }
 
 .wish-cell {
@@ -50,8 +52,8 @@
 }
 
 .wish-cell-right {
-    aborder-radius: 0 1em 1em 0;
-    aborder: 1px solid #3498DB;
+    border-bottom: 1px solid #3498DB;
+    margin-left: 0.1em;
 }
 
 .wish-row {
@@ -66,6 +68,14 @@
     background-image: url("https://www.yugma.com/images/loading-animation-7.gif");
     background-repeat: no-repeat;
     background-position: center;
+    border-right: 1px solid white;
+}
+
+.wish-detail .wish-cell-preview {
+    background-color: white;
+    background-repeat: repeat;
+    padding: 0.5em !important;
+    margin: 0.1em;
 }
 
 .img-preview {
@@ -73,11 +83,9 @@
 }
 
 .wish-bottom {
-    border-top: 1px solid white;
-    border-left: 1px solid white;
+    border-left: 0px solid white;
     border-bottom: 0px solid white;
     border-right: 0px solid white;
-    border-radius: 0 0 1em 0;
 }
 
 .available-scroller {
