@@ -19,11 +19,11 @@
       <ion-list>
         <ion-item class="item-divider"> Cartolina da Fabriano </ion-item>
         <ion-item menu-close ng-click="addWish('Fabriano', fab_photo.preview.url, fab_photo.preview.url)" ng-repeat="fab_photo in fab_photos" item-width="90%" >
-          <a href="#"><img ng-src="{{fab_photo.preview.url}}" width="100%" /></a>
+            <a href="#"><img ng-src="{{fab_photo.preview.url}}" width="100%" alt="Foto di {{fab_photo.author}}" title="Foto di {{fab_photo.author}}" /></a>
         </ion-item>
         <ion-item class="item-divider"> Dedica un video </ion-item>
-        <ion-item menu-close ng-click="addWish('YouTube')" >
-            <img src="https://www.youtube.com/yt/brand/media/image/YouTube-icon-full_color.png" width="100%" />
+        <ion-item menu-close ng-click="addWish('Link')" >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Link_icon.svg/512px-Link_icon.svg.png" width="100%" />
         </ion-item>
         <!-- <ion-item menu-close href="#/app/you/choose/">
           Da... te!
