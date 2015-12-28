@@ -61,7 +61,12 @@
 }
 
 .img-preview {
-    height:360px;
+    @media screen and (max-width: $break-small) {
+        width:100%;
+    }
+    @media screen and (min-width: $break-large) {
+        height:360px;
+    }
 }
 
 .wish-cell {
@@ -77,6 +82,14 @@
     @media screen and (min-width: $break-large) {
         display: flex;
     }
+}
+
+.wish-detail .wish-cell-preview {
+    background-color: white;
+    background-repeat: repeat;
+    padding: 0.5em !important;
+    margin: 0.1em;
+    width:100%;
 }
 
 /*

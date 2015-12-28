@@ -21,7 +21,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-$break-small: 320px;
+$break-small: 480px;
 $break-large: 1200px;
 $length-radius: 1em;
 $blue-slick: #3498DB;
@@ -42,6 +42,10 @@ $blue-slick: #3498DB;
     width: 100%;
     // background-color: #33CD5F;
     // color: white;
+}
+
+.photo {
+  width: 100%;
 }
 
 .item-input input, .item-input textarea {

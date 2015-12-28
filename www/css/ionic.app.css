@@ -9770,7 +9770,7 @@ a.button {
   border-right: 1px solid white;
   text-align: center;
   vertical-align: middle; }
-  @media screen and (max-width: 320px) {
+  @media screen and (max-width: 480px) {
     .wish-cell-preview {
       width: 100%; } }
   @media screen and (min-width: 1200px) {
@@ -9788,8 +9788,13 @@ a.button {
     .reduce-width {
       height: 100%; } }
 
-.img-preview {
-  height: 360px; }
+@media screen and (max-width: 480px) {
+  .img-preview {
+    width: 100%; } }
+
+@media screen and (min-width: 1200px) {
+  .img-preview {
+    height: 360px; } }
 
 .wish-cell {
   padding: 0px;
@@ -9804,6 +9809,13 @@ a.button {
     .wish-row {
       display: flex; } }
 
+.wish-detail .wish-cell-preview {
+  background-color: white;
+  background-repeat: repeat;
+  padding: 0.5em !important;
+  margin: 0.1em;
+  width: 100%; }
+
 /*
 .wish-cell-right {
     border-bottom: 1px solid #3498DB;
@@ -9817,6 +9829,16 @@ a.button {
     margin: 0.1em;
 }
 */
+.header-item {
+  font-size: x-large !important; }
+
+.wish-filters .wrap-dd-select {
+  height: 100%;
+  width: 100%; }
+
+.photo {
+  width: 100%; }
+
 .item-input input, .item-input textarea {
   border: 1px dashed #387EF5;
   border-radius: 0.2em;
