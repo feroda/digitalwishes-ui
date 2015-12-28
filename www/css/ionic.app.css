@@ -9751,7 +9751,7 @@ a.button {
   border: 0px solid white;
   background: #3498DB none repeat scroll 0% 0%;
   color: #FFF; }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     .wish-body {
       min-height: 295px !important; } }
 
@@ -9770,10 +9770,10 @@ a.button {
   border-right: 1px solid white;
   text-align: center;
   vertical-align: middle; }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 1000px) {
     .wish-cell-preview {
       width: 100%; } }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     .wish-cell-preview {
       width: 50%; } }
 
@@ -9784,15 +9784,15 @@ a.button {
 
 .reduce-width {
   margin: auto; }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     .reduce-width {
       height: 100%; } }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1000px) {
   .img-preview {
     width: 100%; } }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1000px) {
   .img-preview {
     height: 360px; } }
 
@@ -9805,7 +9805,7 @@ a.button {
   border: 0px solid #3498DB;
   border-radius: 0em;
   padding: 0 1px; }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1000px) {
     .wish-row {
       display: flex; } }
 

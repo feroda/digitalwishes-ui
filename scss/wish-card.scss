@@ -19,7 +19,7 @@
     white-space: normal;
     border: 0px solid white;
     @include blue;
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-medium) {
         min-height:295px !important;
     }
 }
@@ -39,10 +39,10 @@
     border-right: 1px solid white;
     text-align: center;
     vertical-align: middle;
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-medium) {
         width:100%;
     }
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-medium) {
         width: 50%;
     }
 }
@@ -55,16 +55,16 @@
 
 .reduce-width {
     margin: auto;
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-medium) {
         height:100%;
     }
 }
 
 .img-preview {
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-medium) {
         width:100%;
     }
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-medium) {
         height:360px;
     }
 }
@@ -79,7 +79,7 @@
     border: 0px solid #3498DB;
     border-radius: 0em;
     padding: 0 1px;
-    @media screen and (min-width: $break-large) {
+    @media screen and (min-width: $break-medium) {
         display: flex;
     }
 }
