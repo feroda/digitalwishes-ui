@@ -9751,6 +9751,9 @@ a.button {
   border: 0px solid white;
   background: #3498DB none repeat scroll 0% 0%;
   color: #FFF; }
+  @media screen and (min-width: 1200px) {
+    .wish-body {
+      min-height: 295px !important; } }
 
 .wish-bottom {
   border-left: 0px solid white;
@@ -9766,10 +9769,24 @@ a.button {
   background-position: center;
   border-right: 1px solid white;
   text-align: center;
-  width: 100%; }
+  vertical-align: middle; }
+  @media screen and (max-width: 320px) {
+    .wish-cell-preview {
+      width: 100%; } }
+  @media screen and (min-width: 1200px) {
+    .wish-cell-preview {
+      width: 50%; } }
+
+.item-input input, .item-input textarea {
+  border: 1px dashed #387EF5;
+  border-radius: 0.2em;
+  margin-right: 0.5em; }
 
 .reduce-width {
   margin: auto; }
+  @media screen and (min-width: 1200px) {
+    .reduce-width {
+      height: 100%; } }
 
 .img-preview {
   height: 360px; }
@@ -9779,17 +9796,18 @@ a.button {
   border: 0px;
   vertical-align: middle; }
 
+.wish-row {
+  border: 0px solid #3498DB;
+  border-radius: 0em;
+  padding: 0 1px; }
+  @media screen and (min-width: 1200px) {
+    .wish-row {
+      display: flex; } }
+
 /*
 .wish-cell-right {
     border-bottom: 1px solid #3498DB;
     margin-left: 0.1em;
-}
-
-.wish-row {
-    border: 0px solid #3498DB;
-    border-radius: 0em;
-    display: flex;
-    padding: 0 1px;
 }
 
 .wish-detail .wish-cell-preview {
@@ -9798,15 +9816,8 @@ a.button {
     padding: 0.5em !important;
     margin: 0.1em;
 }
-
-.profile-pic {
-    float: left;
-    width: 250px;
-    @media screen and (max-width: $break-small) {
-    width: 100px;
-    float: none;
-    }
-    @media screen and (min-width: $break-large) {
-    float: right;
-    }
-}*/
+*/
+.item-input input, .item-input textarea {
+  border: 1px dashed #387EF5;
+  border-radius: 0.2em;
+  margin-right: 0.5em; }
