@@ -33,21 +33,28 @@ angular.module('starter.controllers', [])
   };
 
   $scope.fab_photos = [{
-      url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi.jpg',
-      author: 'Antonio Stopponi'
-  },{
-      url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi3.jpg',
-      author: 'Antonio Stopponi'
-  },{
-      url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi2.jpg',
-      author: 'Antonio Stopponi'
-  },{
-      url: $rootScope.config.base_url + 'img/fabriano/fabriziolampini.jpg',
-      author: 'Fabrizio Lampini'
-  },{
-      url: $rootScope.config.base_url + 'img/fabriano/matteomingo.jpg',
-      author: 'Matteo Mingo'
-  }];
+        url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi.jpg',
+        author: 'Antonio Stopponi'
+    },{
+        url: $rootScope.config.base_url + 'img/fabriano/matteomingo.jpg',
+        author: 'Matteo Mingo'
+    },{
+        url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi3.jpg',
+        author: 'Antonio Stopponi'
+    },{
+        url: $rootScope.config.base_url + 'img/fabriano/fabriziolampini.jpg',
+        author: 'Fabrizio Lampini'
+    },{
+        url: $rootScope.config.base_url + 'img/fabriano/AndreaBevilacquaB1.jpg',
+        author: 'Andrea Bevilacqua'
+    },{
+        url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi2.jpg',
+        author: 'Antonio Stopponi'
+    },{
+        url: $rootScope.config.base_url + 'img/fabriano/AndreaBevilacquaB7.jpg',
+        author: 'Andrea Bevilacqua'
+    }];
+
   angular.forEach($scope.fab_photos, function (photo) {
       photo.preview = $rootScope.get_media_preview(photo);
   });

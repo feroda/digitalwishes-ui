@@ -21,3 +21,36 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+$break-small: 480px;
+$break-large: 1200px;
+$break-medium: 1000px;
+$length-radius: 1em;
+$blue-slick: #3498DB;
+
+@mixin blue {
+    background: #3498DB none repeat scroll 0% 0%;
+    color: #FFF;
+}
+
+@import "scss/wish-card";
+
+.header-item {
+    font-size: x-large !important;
+}
+
+.wish-filters .wrap-dd-select {
+    height: 100%;
+    width: 100%;
+    // background-color: #33CD5F;
+    // color: white;
+}
+
+.photo {
+  width: 100%;
+}
+
+.item-input input, .item-input textarea {
+    border: 1px dashed #387EF5;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
+}
