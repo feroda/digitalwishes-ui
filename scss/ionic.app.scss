@@ -31,88 +31,21 @@ $blue-slick: #3498DB;
     color: #FFF;
 }
 
-.wish-card {
-    padding: 0.1em;
-    margin-bottom: 1em !important;
-    margin-top: 3em !important;
-    border: 1px solid $blue-slick;
-    border-radius: $length-radius $length-radius 0 0;
+@import "scss/wish-card";
+
+.header-item {
+    font-size: x-large !important;
 }
 
-.wish-top {
-    background-color: white;
-    border-bottom: 1px solid $blue-slick;
-    margin-bottom: 0px;
-    text-align: center;
-    border-radius: $length-radius $length-radius 0 0;
+.wish-filters .wrap-dd-select {
+    height: 100%;
+    width: 100%;
+    // background-color: #33CD5F;
+    // color: white;
 }
 
-.wish-body {
-    text-overflow: clip;
-    white-space: normal;
-    border: 0px solid white;
-    @include blue;
+.item-input input, .item-input textarea {
+    border: 1px dashed #387EF5;
+    border-radius: 0.2em;
+    margin-right: 0.5em;
 }
-
-.wish-bottom {
-    border-left: 0px solid white;
-    border-bottom: 0px solid white;
-    border-right: 0px solid white;
-    @include blue;
-}
-
-.wish-cell-preview {
-    background-color: #000;
-    background-image: url("https://www.yugma.com/images/loading-animation-7.gif");
-    background-repeat: no-repeat;
-    background-position: center;
-    border-right: 1px solid white;
-    text-align: center;
-    width:100%;
-}
-
-.reduce-width {
-    margin: auto;
-}
-
-.img-preview {
-    height: 360px;
-}
-
-.wish-cell {
-    padding: 0px;
-    border: 0px;
-    vertical-align: middle;
-}
-
-/*
-.wish-cell-right {
-    border-bottom: 1px solid #3498DB;
-    margin-left: 0.1em;
-}
-
-.wish-row {
-    border: 0px solid #3498DB;
-    border-radius: 0em;
-    display: flex;
-    padding: 0 1px;
-}
-
-.wish-detail .wish-cell-preview {
-    background-color: white;
-    background-repeat: repeat;
-    padding: 0.5em !important;
-    margin: 0.1em;
-}
-
-.profile-pic {
-    float: left;
-    width: 250px;
-    @media screen and (max-width: $break-small) {
-    width: 100px;
-    float: none;
-    }
-    @media screen and (min-width: $break-large) {
-    float: right;
-    }
-}*/
