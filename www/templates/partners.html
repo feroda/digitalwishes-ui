@@ -1,0 +1,17 @@
+<ion-view view-title="I nostri Partners!">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="partner in partners" type="item-text-wrap"><!-- href="/img/partners/{{partner.url}}">-->
+            <img ng-src="{{partner.url}}">
+            <h3>{{partner.author}}</h3>
+
+            <!-- old connection used for dsc
+            <p>Test Text</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+            <ion-option-button class="button-assertive" ng-click="remove(chat)">
+            Delete
+            </ion-option-button> -->
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

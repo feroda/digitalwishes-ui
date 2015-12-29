@@ -32,6 +32,23 @@ angular.module('starter.controllers', [])
     $scope.modal.show();
   };
 
+  $scope.partners = [{
+        url: $rootScope.config.base_url + 'img/partners/fabricamenti.png',
+        author: 'Fabricamenti'
+    },{
+        url: $rootScope.config.base_url + 'img/partners/antoniostopponi.jpg',
+        author: 'Antonio Stopponi'
+    },{
+        url: $rootScope.config.base_url + 'img/partners/matteomingo.jpg',
+        author: 'Matteo Mingo'
+    },{
+        url: $rootScope.config.base_url + 'img/partners/fabriziolampini.jpg',
+        author: 'Fabrizio Lampini'
+    },{
+        url: $rootScope.config.base_url + 'img/partners/andreabevilacqua.jpg',
+        author: 'Andrea Bevilacqua'
+    }];
+
   $scope.fab_photos = [{
         url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi.jpg',
         author: 'Antonio Stopponi'
@@ -109,6 +126,10 @@ angular.module('starter.controllers', [])
         });
         setTimeout($scope.init_detail, 500);
     });
+})
+
+.controller('PartnersCtrl', function($scope, $rootScope) {
+
 })
 
 .controller('PlaylistsCtrl', function($scope, $rootScope) {
