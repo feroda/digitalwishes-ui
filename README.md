@@ -23,4 +23,4 @@ Senza tirare giù questa basta fare
 
 $ ionic start myApp tabs (usare il template "tags")
 
-Lo consiglio a chi non ha mai visto ionic e si mette a lavorare su questo progetto
+Lo consiglio a chi non ha mai visto ionic e si mette a lavorare su questo progetto. Ovviamente potete seguire l'ottimo [Getting Started with Ionic](http://ionicframework.com/getting-started/)
