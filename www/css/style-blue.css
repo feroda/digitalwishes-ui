@@ -46,3 +46,10 @@ h2 {
     width: 50%;
     float: right;
 }
+
+.text-middle {
+    height: 8em;
+    resize: none;
+    width: 615px !important;
+    background: none;
+}
