@@ -32,7 +32,59 @@ angular.module('starter.controllers', [])
     $scope.modal.show();
   };
 
-  $scope.fab_photos = [{
+    // IDs
+    // 0 = Coordinamento
+    // 1 = Contenuti, testi e moderazione
+    // 2 = Foto da Fabriano
+    // 3 = Coders 
+
+    $scope.partners = [{
+        id: 0,
+        photo: $rootScope.config.base_url + 'img/partners/DCFAB_logo.png',
+        name: 'FabrianoDigital',
+        url: 'http://www.fabrianodigital.it/'
+    },{
+        id: 1,
+        photo: $rootScope.config.base_url + 'img/partners/makerspace.jpg',
+        name: 'Makerspace',
+        url: 'https://plus.google.com/112862693801108701105/'
+    },{
+        id: 1,
+        photo: $rootScope.config.base_url + 'test_data/fabricamenti.png',
+        name: 'Fabricamenti',
+        url: 'http://www.fabricamenti.it/'
+    },{
+        id: 2,
+        photo: $rootScope.config.base_url + 'img/fabriano/matteomingo.jpg',
+        name: 'Matteo Mingo',
+    },{
+        id: 2,
+        photo: $rootScope.config.base_url + 'img/fabriano/fabriziolampini.jpg',
+        name: 'Fabrizio Lampini',
+    },{
+        id: 2,
+        photo: $rootScope.config.base_url + 'img/fabriano/antoniostopponi.jpg',
+        name: 'Antonio Stopponi',
+    },{
+        id: 2,
+        photo: $rootScope.config.base_url + 'img/fabriano/AndreaBevilacquaB1.jpg',
+        name: 'Andrea Bevilacqua',
+    },{
+        id: 3,
+        photo: $rootScope.config.base_url + 'img/partners/fero.jpg',
+        name: 'Luca Ferroni',
+    },{
+        id: 3,
+        photo: $rootScope.config.base_url + 'img/partners/radeox.jpg',
+        name: 'Dawid Weglarz',
+    },{
+        id: 3,
+        photo: $rootScope.config.base_url + 'img/partners/marko.jpg',
+        name: 'Matteo Micheletti',
+    }];
+
+
+    $scope.fab_photos = [{
         url: $rootScope.config.base_url + 'img/fabriano/antoniostopponi.jpg',
         author: 'Antonio Stopponi'
     },{
@@ -109,6 +161,10 @@ angular.module('starter.controllers', [])
         });
         setTimeout($scope.init_detail, 500);
     });
+})
+
+.controller('PartnersCtrl', function($scope, $rootScope) {
+
 })
 
 .controller('PlaylistsCtrl', function($scope, $rootScope) {

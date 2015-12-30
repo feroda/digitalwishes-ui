@@ -1,0 +1,32 @@
+<ion-view view-title="I nostri Partners!">
+    <ion-content>
+        <ion-list>
+
+            <div class="item item-divider">Coordinamento</div>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="partner in partners" ng-if="partner.id == 0" type="item-text-wrap" href="{{partner.url}}" target="_blank">
+                <img ng-src="{{partner.photo}}">
+                <h3>{{partner.name}}</h3>
+            </ion-item>
+
+             <div class="item item-divider">Contenuti, testi e moderazione</div>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="partner in partners" ng-if="partner.id == 1" type="item-text-wrap" href="{{partner.url}}" target="_blank">
+                <img ng-src="{{partner.photo}}">
+                <h3>{{partner.name}}</h3>
+            </ion-item>
+
+            <div class="item item-divider">Foto da Fabriano</div>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="partner in partners" ng-if="partner.id == 2" type="item-text-wrap" href="{{partner.url}}" target="_blank">
+                <img ng-src="{{partner.photo}}">
+                <h3>{{partner.name}}</h3>
+            </ion-item>
+
+            <div class="item item-divider">Coders</div>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="partner in partners" ng-if="partner.id == 3" type="item-text-wrap" href="{{partner.url}}" target="_blank">
+                <img ng-src="{{partner.photo}}">
+                <h3>{{partner.name}}</h3>
+            </ion-item>
+
+            <ion-item></ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

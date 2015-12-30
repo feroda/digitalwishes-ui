@@ -46,3 +46,14 @@ h2 {
     width: 50%;
     float: right;
 }
+
+.text-middle {
+    height: 8em;
+    resize: none;
+    width: 75% !important;
+    background: none;
+}
+
+.input-label {
+    width: 25% !important;
+}

@@ -68,6 +68,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
       }
     }
   })
+
+  .state('app.partners', {
+    url: '/partners',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/partners.html',
+        controller: 'PartnersCtrl'
+      }
+    }
+  })
+
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
