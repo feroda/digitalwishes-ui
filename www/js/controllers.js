@@ -54,6 +54,11 @@ angular.module('starter.controllers', [])
         name: 'Fabricamenti',
         url: 'http://www.fabricamenti.it/'
     },{
+        id: 1,
+        photo: 'http://pdp.linux.it/wp-content/uploads/logoPDP_web.jpg',
+        name: 'PDP Free Software User Group',
+        url: 'http://pdp.linux.it'
+    },{
         id: 2,
         photo: $rootScope.config.base_url + 'img/fabriano/matteomingo.jpg',
         name: 'Matteo Mingo'
