@@ -79,6 +79,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
     }
   })
 
+  .state('app.wishers', {
+    url: '/wishers',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/wishers.html',
+      }
+    }
+  })
+
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
