@@ -30,6 +30,11 @@ angular.module('starter.controllers', [])
     $scope.new_wish.url = src;
     $scope.new_wish.preview_url = preview_url;
     $scope.modal.show();
+
+    if(src != null)
+        $('.modal-backdrop').css('background', 'url(' + src + ') fixed center center/cover ');
+    else
+        $('.modal-backdrop').css('background', 'black');
   };
 
     // IDs

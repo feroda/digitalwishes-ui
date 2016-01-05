@@ -2978,6 +2978,24 @@ $dark:                            #444 !default;
 .ion-xbox:before {
   content: ""; }
 
+/*User defined*/
+.xmastree:before {
+    content: url("/img/icons/xmastree.png"); }
+
+.xmastree-active:before {
+    content: url("/img/icons/xmastree-active.png"); }
+
+.partnership:before {
+    content: url("/img/icons/partnership.png"); }
+
+.partnership-active:before {
+    content: url("/img/icons/partnership-active.png"); }
+
+.present:before {
+    content: url("/img/icons/present.png"); }
+
+.present-active:before {
+    content: url("/img/icons/present-active.png"); }
 /**
  * Resets
  * --------------------------------------------------
