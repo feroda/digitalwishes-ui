@@ -41,7 +41,6 @@ angular.module('starter.controllers', [])
   };
 
   $scope.changeBackground = function() {
-
     var src = $('#wish-link').val();
     IsValidImageUrl(src);
 
