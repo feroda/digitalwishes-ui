@@ -21,7 +21,7 @@
         <!-- </ion-item> -->
         <label class="item item-input">
           <span class="input-label">Link da caricare</span>
-          <input type="text" ng-model="new_wish.url" placeholder=" un video YouTube, un video Facebook, una foto, o copia qui un altro link" >
+          <input id="wish-link" type="text" ng-model="new_wish.url" placeholder=" un video YouTube, un video Facebook, una foto, o copia qui un altro link" ng-change="changeBackground()">
         </label>
         <label class="item item-input">
           <span class="input-label">Titolo</span>
