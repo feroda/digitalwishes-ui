@@ -2,6 +2,7 @@
     <ion-content>
         <ion-list>
 
+            <ion-item></ion-item> <!-- WIP Bar cover text -->
              <div class="item item-divider">Contenuti, test e moderazione</div>
             <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="partner in partners" ng-if="partner.id == 1" type="item-text-wrap" href="{{partner.url}}" target="_blank">
                 <img ng-src="{{partner.photo}}">
@@ -26,7 +27,20 @@
                 <h3>{{partner.name}}</h3>
             </ion-item>
 
+            <!-- Program Version -->
+            <div class="item item-divider">
+                <p>Digital Wishes</p>
+                <p>Versione {{ version }}</p>
+            </div>
+
+            <ion-item></ion-item>
             <ion-item></ion-item>
         </ion-list>
+
+        <!-- Work in progress bar-->
+        <ion-header-bar class="bar-header bar-calm bar-margin">
+            <h3 class="title">Questo servizio è un progetto sperimentale <a href="http://www.fabrianodigital.it" target="_blank">#fabrianodigital</a>. Rimanete sintonizzati e vedrete come ci divertiamo a <a href="https://github.com/feroda/digitalwishes-ui/issues" target="_blank">migliorarlo...</a></h3>
+        </ion-footer-bar>
+
     </ion-content>
 </ion-view>

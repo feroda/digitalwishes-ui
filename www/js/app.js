@@ -19,10 +19,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    window.addEventListener("orientationchange", function() {
+        switch(window.orientation)
+        {
+          case -90:
+          case 90:
+            $('#tabs').addClass('ng-hide');
+            break;
+          default:
+            $('#tabs').removeClass('ng-hide');
+            break;
+        }
+    }, false);
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
   $stateProvider
   .state('app', {
@@ -99,6 +112,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngSanitize', 'slick'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
+
+  // Force the tab-bar to bottom on android
+  $ionicConfigProvider.tabs.position('bottom'); // other values: top
 })
 .run(function($rootScope, $http, $state) {
 

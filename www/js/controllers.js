@@ -9,6 +9,9 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
+  //Digital wishes version
+  $scope.version = "0.3";
+
   // Form data for the login modal
   $scope.new_wish = {};
 
@@ -36,6 +39,19 @@ angular.module('starter.controllers', [])
     else
         $('.modal-backdrop').css('background', 'black');
   };
+
+  $scope.changeBackground = function() {
+    var src = $('#wish-link').val();
+    IsValidImageUrl(src);
+
+    function IsValidImageUrl(url) {
+      $("<img>", {
+        src: url,
+        error: function() { $('.modal-backdrop').css('background', 'black'); },
+        load: function() { $('.modal-backdrop').css('background', 'url(' + url + ') fixed center center/cover '); }
+      });
+    }
+  }
 
     // IDs
     // 0 = Coordinamento
@@ -173,13 +189,9 @@ angular.module('starter.controllers', [])
     });
 })
 
-.controller('PartnersCtrl', function($scope, $rootScope) {
+.controller('PartnersCtrl', function($scope, $rootScope) { })
 
-})
-
-.controller('PlaylistsCtrl', function($scope, $rootScope) {
-
-})
+.controller('PlaylistsCtrl', function($scope, $rootScope) { })
 
 .controller('BrowseCtrl', function($scope, $rootScope) {
 
