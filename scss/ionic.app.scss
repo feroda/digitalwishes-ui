@@ -54,3 +54,22 @@ $blue-slick: #3498DB;
     border-radius: 0.2em;
     margin-right: 0.5em;
 }
+
+.xmastree:before {
+    content: url("/ui/img/icons/xmastree.png"); }
+
+.xmastree-active:before {
+    content: url("/ui/img/icons/xmastree-active.png"); }
+
+.partnership:before {
+    content: url("/ui/img/icons/partnership.png"); }
+
+.partnership-active:before {
+    content: url("/ui/img/icons/partnership-active.png"); }
+
+.present:before {
+    content: url("/ui/img/icons/present.png"); }
+
+.present-active:before {
+    content: url("/ui/img/icons/present-active.png"); }
+

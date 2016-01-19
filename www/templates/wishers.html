@@ -1,0 +1,12 @@
+<ion-view view-title="Digital Wishes inseriti da...">
+    <ion-content>
+        <ion-list>
+            <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="wish in wishes" ng-if="wish.author_name != ''" type="item-text-wrap">
+                <img ng-src="{{wish.author_avatar}}">
+                <h3>{{wish.author_name}}</h3>
+            </ion-item>
+
+            <ion-item></ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
