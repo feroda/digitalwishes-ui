@@ -163,7 +163,7 @@ angular.module('starter.controllers', [])
 
     $scope.wish = {
         "title": "Augurio non trovato",
-        "dedication":"L'augurio che cerchi non è stato trovato, ma ti augiriamo comunque buone feste!",
+        "dedication":"L'augurio che cerchi non è stato trovato, ma ti auguriamo comunque buone feste!",
         "url":"",
         "description":"",
         "author_name":"Makerspace",
