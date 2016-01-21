@@ -107,6 +107,10 @@ angular.module('starter.controllers', [])
         id: 3,
         photo: $rootScope.config.base_url + 'img/partners/marko.jpg',
         name: 'Matteo Micheletti'
+    },{
+        id: 3,
+        photo: $rootScope.config.base_url + 'img/partners/lorenzofar.jpg',
+        name: 'Lorenzo Farinelli'
     }];
 
 
